@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+@backgroundColor: lighten(@black, 10);
+@borderColor: lighten(@black, 15);
+@darkWhite: darken(#F3F4F5, 50);
+@activeColor: darken(@linkColor, 50);

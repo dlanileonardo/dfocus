@@ -1,0 +1,6 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.indicating.inverted.progress > .label {
+    color: #FFFFFF;
+}

@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+@scrollingMobileMaxItems: 12;
+@scrollingTabletMaxItems: 12;
+@scrollingComputerMaxItems: 12;
+@scrollingWidescreenMaxItems: 12;

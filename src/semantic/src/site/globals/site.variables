@@ -1,0 +1,6 @@
+/*******************************
+     User Global Variables
+*******************************/
+@fontPath                : '../assets/fonts';
+@fontSize                : 12.5px;
+@emSize                  : 12.5px;

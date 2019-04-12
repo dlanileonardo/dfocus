@@ -10,6 +10,10 @@ image: Visual Studio 2017
 platform:
   - x64
 
+environment:
+  matrix:
+    - nodejs_version: 11
+
 cache:
   - node_modules
   - '%APPDATA%\npm-cache'
@@ -27,6 +31,6 @@ install:
 
 build_script:
   #- yarn test
-  - yarn build
+  - yarn run release
 
 test: off

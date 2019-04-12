@@ -1,5 +1,9 @@
 # dfocus
 
+[![Build status](https://ci.appveyor.com/api/projects/status/tb4wy32botgack6u?svg=true)](https://ci.appveyor.com/project/dlanileonardo/dfocus)
+[![Build Status](https://travis-ci.org/dlanileonardo/dfocus.svg?branch=master)](https://travis-ci.org/dlanileonardo/dfocus)
+
+
 > An electron-vue project
 
 #### Build Setup

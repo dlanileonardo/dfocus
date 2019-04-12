@@ -9,7 +9,6 @@
   "homepage": "https://github.com/dlanileonardo/dfocus",
   "repository": "github:dlanileonardo/dfocus",
   "scripts": {
-    "dist": "yarn run build && build --publish onTagOrDraft",
     "build": "node .electron-vue/build.js && electron-builder",
     "build:win32": "node .electron-vue/build.js && electron-builder --ia32",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",

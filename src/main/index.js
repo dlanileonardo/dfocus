@@ -15,6 +15,7 @@ const path = require('path')
 
 const assetsDirectory = path.join(__static)
 
+var os = require('os')
 var nodeConsole = require('console')
 var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
 
@@ -26,7 +27,9 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 // Don't show the app in the doc
-app.dock.hide()
+if (os.platform() === 'darwin') {
+  app.dock.hide()
+}
 
 app.on('ready', () => {
   createTray()
@@ -67,13 +70,10 @@ const createTray = () => {
 const getWindowPosition = () => {
   const windowBounds = window.getBounds()
   const trayBounds = tray.getBounds()
-
   // Center window horizontally below the tray icon
   const x = Math.round(trayBounds.x + (trayBounds.width / 2) - (windowBounds.width / 2))
-
   // Position window 4 pixels vertically below the tray icon
   const y = Math.round(trayBounds.y + trayBounds.height + 4)
-
   return {x: x, y: y}
 }
 
@@ -140,7 +140,9 @@ const toggleWindow = () => {
 
 const showWindow = () => {
   const position = getWindowPosition()
-  window.setPosition(position.x, position.y, false)
+  if (os.platform() === 'darwin') {
+    window.setPosition(position.x, position.y, false)
+  }
   window.show()
   window.focus()
 }

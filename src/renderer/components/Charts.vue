@@ -17,13 +17,13 @@
               <a
                 is="sui-menu-item"
                 :active="isActiveView('absolute')"
-                :content="texts.view_type.absolute"
+                :content="$t('Absolute')"
                 @click="selectView('absolute')"
               />
               <a
                 is="sui-menu-item"
                 :active="isActiveView('percentage')"
-                :content="texts.view_type.percentage"
+                :content="$t('Percentage')"
                 @click="selectView('percentage')"
               />
             </sui-menu-menu>
@@ -148,12 +148,6 @@ export default {
   data: function () {
     let that = this
     return {
-      texts: {
-        view_type: {
-          absolute: this.$t('Absolute'),
-          percentage: this.$t('Percentage')
-        }
-      },
       settings: {
         fixed_sufixo: ' m',
         sufixo: ' m',

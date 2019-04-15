@@ -59,20 +59,20 @@
           <a
             is="sui-menu-item"
             :active="isActiveView('straight')"
-            :content="texts.view_type.straight"
+            :content="$t('Straight')"
             @click="selectView('straight')"
           />
           <a
             is="sui-menu-item"
             :active="isActiveView('extended')"
-            :content="texts.view_type.extended"
+            :content="$t('Extended')"
             @click="selectView('extended')"
           />
         </div>
       </sui-menu-item>
 
       <sui-menu-item>
-        <sui-input icon="search" :placeholder="texts.search.placeholder" v-model="configs.filter" />
+        <sui-input icon="search" :placeholder="$t('Search')" v-model="configs.filter" />
       </sui-menu-item>
     </sui-sidebar>
 
@@ -126,10 +126,10 @@
           <sui-form :error="errors.items.length > 0">
             <!-- <sui-segment> -->
               <sui-form-field :error="errors.collect('taskName').length > 0">
-                <sui-input name="taskName" v-model="newTask.name" :placeholder="texts.fields.taskName" :required="true" v-validate="'required'" />
+                <sui-input name="taskName" v-model="newTask.name" :placeholder="$t('Task Name')" :required="true" v-validate="'required'" />
               </sui-form-field>
               <sui-form-field :error="errors.collect('taskDescription').length > 0">
-                <textarea namw="taskDescription" v-model="newTask.description" :placeholder="texts.fields.taskDescription" :required="true"  rows="1"></textarea>
+                <textarea namw="taskDescription" v-model="newTask.description" :placeholder="$t('Description')" :required="true"  rows="1"></textarea>
               </sui-form-field>
             <!-- </sui-segment> -->
 
@@ -291,19 +291,6 @@ export default {
   },
   data () {
     return {
-      texts: {
-        fields: {
-          taskName: this.$t('Task Name'),
-          taskDescription: this.$t('Description')
-        },
-        search: {
-          placeholder: this.$t('Search')
-        },
-        view_type: {
-          straight: this.$t('Straight'),
-          extended: this.$t('Extended')
-        }
-      },
       configs: {
         filter: '',
         sidebar: false

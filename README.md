@@ -1,6 +1,6 @@
 # DFocus
 
-[![Build status](https://ci.appveyor.com/api/projects/status/tb4wy32botgack6u?svg=true)](https://ci.appveyor.com/project/dlanileonardo/dfocus)
+[![Build status](https://ci.appveyor.com/api/projects/status/tb4wy32botgack6u/branch/master?svg=true)](https://ci.appveyor.com/project/dlanileonardo/dfocus/branch/master)
 [![Build Status](https://travis-ci.org/dlanileonardo/dfocus.svg?branch=master)](https://travis-ci.org/dlanileonardo/dfocus)
 
 <p align="center">

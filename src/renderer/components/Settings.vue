@@ -14,7 +14,7 @@
                 multiple
                 fluid
                 :options="alerts"
-                :placeholder="texts.dropdowns.pomodoro_alerts"
+                :placeholder="$t('Pomodoro Alerts')"
                 search
                 selection
                 v-model="settings.pomodoro_alerts"
@@ -31,7 +31,7 @@
                 multiple
                 fluid
                 :options="alerts"
-                :placeholder="texts.dropdowns.break_alerts"
+                :placeholder="$t('Break Alerts')"
                 search
                 selection
                 v-model="settings.break_alerts"
@@ -54,7 +54,7 @@
                 multiple
                 fluid
                 :options="musics"
-                :placeholder="texts.dropdowns.pomodoro_musics"
+                :placeholder="$t('Pomodoro Musics')"
                 search
                 selection
                 v-model="settings.pomodoro_musics"
@@ -71,7 +71,7 @@
                 multiple
                 fluid
                 :options="musics"
-                :placeholder="texts.dropdowns.break_musics"
+                :placeholder="$t('Break Musics')"
                 search
                 selection
                 v-model="settings.break_musics"
@@ -135,14 +135,6 @@ export default {
   },
   data () {
     return {
-      texts: {
-        dropdowns: {
-          pomodoro_alerts: this.$t('Pomodoro Alerts'),
-          break_alerts: this.$t('Break Alerts'),
-          pomodoro_musics: this.$t('Pomodoro Musics'),
-          break_musics: this.$t('Break Musics')
-        }
-      },
       alerts: [
         { text: 'Door Bell', value: 'Door Bell-SoundBible.com-1986366504.mp3' },
         { text: 'SMS Alert 1', value: 'sms-alert-1-daniel_simon.mp3' },

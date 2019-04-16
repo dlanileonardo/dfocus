@@ -13,8 +13,8 @@
               icon="tasks"
               labeled
               :options="tasks"
-              :placeholder="texts.dropdown.placeholder"
-              :text="texts.dropdown.placeholder"
+              :placeholder="$t('Select Task')"
+              :text="$t('Select Task')"
               v-model="selected_task"
               :menu-header="menuHeader"
               :search-in-menu="searchInMenu"
@@ -36,9 +36,9 @@
 
       <div class="sixteen wide column centered row">
         <div class="column centered text-center">
-          <sui-button @click="start" :content="texts.buttons.start" label-position="left" class="tiny" :disabled="timer_running" icon="play" :primary="true"></sui-button>
-          <sui-button @click="done" :content="texts.buttons.done" label-position="left" class="tiny" :disabled="!timer_started" icon="check" :positive="true"></sui-button>
-          <sui-button @click="pause" :content="texts.buttons.pause" label-position="left" class="tiny" :disabled="!timer_running" icon="pause" :negative="true"></sui-button>
+          <sui-button @click="start" label-position="left" :content="$t('Start')" class="tiny" :disabled="timer_running" icon="play" :primary="true"></sui-button>
+          <sui-button @click="done" label-position="left" :content="$t('Done')" class="tiny" :disabled="!timer_started" icon="check" :positive="true"></sui-button>
+          <sui-button @click="pause" label-position="left" :content="$t('Pause')" class="tiny" :disabled="!timer_running" icon="pause" :negative="true"></sui-button>
         </div>
       </div>
     </div>
@@ -114,16 +114,6 @@
     data () {
       let that = this
       return {
-        texts: {
-          dropdown: {
-            placeholder: this.$t('Select Task')
-          },
-          buttons: {
-            start: this.$t('Start'),
-            done: this.$t('Done'),
-            pause: this.$t('Pause')
-          }
-        },
         debounceReloadPomodoroInfo: that.lodash.debounce(() => {
           that.task.status = 'processed'
           that.udateTask(that.task)

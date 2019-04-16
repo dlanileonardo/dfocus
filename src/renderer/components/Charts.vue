@@ -39,6 +39,9 @@
           </sui-segment>
         </sui-grid-column>
     </sui-grid>
+
+    <!-- <sui-segment><pre>{{chartOptions}}</pre></sui-segment> -->
+
   </sui-container>
 </template>
 <script>
@@ -89,7 +92,22 @@ export default {
           stackType: that.view_type === 'percentage' ? '100%' : 'normal'
         },
         yaxis: {
-          max: that.view_type === 'percentage' ? 100 : null
+          max: that.view_type === 'percentage' ? 100 : 480,
+          tickAmount: that.view_type === 'percentage' ? 2 : 4
+        }
+      }
+
+      if (that.view_type === 'percentage') {
+        newChartOptions.yaxis.labels = {
+          formatter: function (value) {
+            return value.toFixed(0) + '%'
+          }
+        }
+      } else {
+        newChartOptions.yaxis.labels = {
+          formatter: function (value) {
+            return value.toFixed(1) / 60 + 'h'
+          }
         }
       }
 
@@ -110,6 +128,8 @@ export default {
 
           return {
             category: item,
+            num_pomodoros: pomodoros.length,
+            num_breaks: breaks.length,
             sumed_pomodors: sumedPomodors / 60,
             sumed_breaks: sumedBreaks / 60
           }
@@ -122,10 +142,12 @@ export default {
         that.lodash.forEach(allSeries, (item) => {
           series.focus.push({
             x: item.category,
+            qty: item.num_pomodoros,
             y: item.sumed_pomodors ? item.sumed_pomodors : 0
           })
           series.breaks.push({
             x: item.category,
+            qty: item.num_breaks,
             y: item.sumed_breaks ? item.sumed_breaks : 0
           })
         })
@@ -187,9 +209,16 @@ export default {
           }
         },
         yaxis: {
-          max: 100,
+          max: 480,
+          tickAmount: 4,
+          // forceNiceScale: true,
           axisTicks: {
-            show: false
+            show: true,
+            borderType: 'solid',
+            color: '#78909C',
+            width: 6,
+            offsetX: 0,
+            offsetY: 0
           },
           crosshairs: {
             position: 'front',
@@ -222,7 +251,8 @@ export default {
           }
         },
         grid: {
-          show: false
+          show: true,
+          borderColor: '#222'
         },
         xaxis: {
           categories: [],
@@ -234,7 +264,7 @@ export default {
             show: false
           },
           axisTicks: {
-            show: true
+            show: false
           }
         }
       },

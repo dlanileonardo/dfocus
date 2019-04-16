@@ -3,6 +3,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/tb4wy32botgack6u?svg=true)](https://ci.appveyor.com/project/dlanileonardo/dfocus)
 [![Build Status](https://travis-ci.org/dlanileonardo/dfocus.svg?branch=master)](https://travis-ci.org/dlanileonardo/dfocus)
 
+<p align="center">
+  <img src="./.github/images/screenshot.png">
+</p>
 
 > An electron-vue project
 
@@ -21,11 +24,10 @@ npm run build
 # run unit & end-to-end tests
 npm test
 
-
 # lint all JS/Vue component files in `src/`
 npm run lint
-
 ```
+
 
 ---
 

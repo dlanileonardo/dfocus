@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'development') {
 
 const { app, BrowserWindow, ipcMain, Tray } = require('electron')
 const path = require('path')
+const { autoUpdater } = require('electron-updater')
 
 const assetsDirectory = path.join(__static)
 
@@ -30,6 +31,7 @@ const winURL = process.env.NODE_ENV === 'development'
 app.on('ready', () => {
   createTray()
   createWindow()
+  autoUpdater.checkForUpdatesAndNotify()
 })
 
 // Quit the app when the window is closed

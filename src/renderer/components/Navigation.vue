@@ -39,6 +39,10 @@ export default {
           icon: 'settings',
           position: 'right'
         }
+        // {
+        //   path: '/close',
+        //   icon: 'close'
+        // }
       ]
     }
   }

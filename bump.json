@@ -1,0 +1,49 @@
+{
+  "version": {
+    "enabled": true,
+    "initial": "0.0.1",
+    "increments": ["major", "minor", "patch", "premajor", "preminor", "prepatch", "prerelease", "custom"]
+  },
+  "changelog": {
+    "enabled": false
+  },
+  "commit": {
+    "enabled": true,
+    "message": "Bumped version to [version]"
+  },
+  "tag": {
+    "enabled": false,
+    "name": "v[version]"
+  },
+  "release": {
+    "enabled": false,
+    "github": {
+      "enabled": false,
+      "open": true,
+      "draft": true,
+      "prerelease": false,
+      "files": [],
+      "token": ""
+    }
+  },
+  "tokens": {
+    "date": {
+      "format": "YYYY-MM-DD"
+    },
+    "version_date": {
+      "format": "YYYY-MM-DD"
+    }
+  },
+  "scripts": {
+    "prebump": "",
+    "postbump": "",
+    "prechangelog": "",
+    "postchangelog": "",
+    "precommit": "github_changelog_generator --future-release version",
+    "postcommit": "",
+    "pretag": "",
+    "posttag": "",
+    "prerelease": "",
+    "postrelease": ""
+  }
+}

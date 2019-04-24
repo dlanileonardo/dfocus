@@ -49,16 +49,22 @@
       ]
     },
     "mac": {
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "icon": "build/icons/icon.icns"
     },
     "win": {
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "icon": "build/icons/icon.ico",
       "target": "nsis"
     },
     "linux": {
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "icon": "build/icons/icon.png",
       "target": [
         "AppImage",
@@ -67,6 +73,7 @@
     }
   },
   "dependencies": {
+    "@fabiospampinato/bump": "^1.0.6",
     "@mvpleung/flipclock": "^0.0.6",
     "apexcharts": "^3.6.3",
     "axios": "^0.18.0",

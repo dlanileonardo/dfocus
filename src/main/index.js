@@ -16,20 +16,16 @@ const path = require('path')
 const assetsDirectory = path.join(__static)
 
 var os = require('os')
-var nodeConsole = require('console')
-var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
-
+// var nodeConsole = require('console')
+// var myConsole = new nodeConsole.Console(process.stdout, process.stderr)
 let tray
 let window
+
+const { plataform } = require('./plataforms/' + os.platform())
 
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
-
-// Don't show the app in the doc
-if (os.platform() === 'darwin') {
-  app.dock.hide()
-}
 
 app.on('ready', () => {
   createTray()
@@ -52,6 +48,7 @@ global.databases = {
 }
 
 const createTray = () => {
+  if (os.platform() === 'win32') { return false }
   tray = new Tray(path.join(assetsDirectory, 'icon_16.png'))
   // tray.on('right-click', toggleWindow)
   // tray.on('click', toggleWindow)
@@ -127,6 +124,7 @@ const createWindow = () => {
     }
   })
 
+  plataform.Helpers.define(window)
   // window.openDevTools({mode: 'detach'})
 }
 
@@ -142,13 +140,13 @@ const showWindow = () => {
   const position = getWindowPosition()
   if (os.platform() === 'darwin') {
     window.setPosition(position.x, position.y, false)
+    window.setTouchBar(plataform.touchBar)
   }
   window.show()
   window.focus()
 }
 
 ipcMain.on('updateTime', (event, timer) => {
-  myConsole.log(timer)
   tray.setTitle(timer + '')
 })
 

@@ -192,10 +192,25 @@
     },
     methods: {
       init () {
+        let that = this
+
         this.reloadItems()
         this.reloadTask()
         this.reloadTasksInfo()
         this.reloadSettings()
+
+        this.$electron.ipcRenderer.on('play-timer', function () {
+          console.log(that)
+          that.start()
+        })
+
+        this.$electron.ipcRenderer.on('done-timer', function () {
+          that.done()
+        })
+
+        this.$electron.ipcRenderer.on('pause-timer', function () {
+          that.pause()
+        })
       },
       autoPauseOnInit () {
         if (this.init_auto && this.task.running) {

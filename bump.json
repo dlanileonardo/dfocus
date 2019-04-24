@@ -4,6 +4,9 @@
     "initial": "0.0.1",
     "increments": ["major", "minor", "patch", "premajor", "preminor", "prepatch", "prerelease", "custom"]
   },
+  "files": {
+    ".github_changelog_generator": ["future-release=([^]*)", "future-release=[version]"]
+  },
   "changelog": {
     "enabled": false
   },
@@ -39,7 +42,7 @@
     "postbump": "",
     "prechangelog": "",
     "postchangelog": "",
-    "precommit": "github_changelog_generator --future-release version",
+    "precommit": "github_changelog_generator",
     "postcommit": "",
     "pretag": "",
     "posttag": "",

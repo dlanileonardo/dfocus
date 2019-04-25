@@ -19,14 +19,14 @@
     "name": "v[version]"
   },
   "release": {
-    "enabled": false,
+    "enabled": true,
     "github": {
-      "enabled": false,
+      "enabled": true,
       "open": true,
       "draft": true,
       "prerelease": false,
       "files": [],
-      "token": ""
+      "token": "GITHUB_API"
     }
   },
   "tokens": {

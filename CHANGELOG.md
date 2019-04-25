@@ -1,14 +1,18 @@
 # Change Log
 
-## [0.0.2](https://github.com/dlanileonardo/dfocus/tree/0.0.2) (2019-04-24)
+## [0.0.2](https://github.com/dlanileonardo/dfocus/tree/0.0.2) (2019-04-25)
 [Full Changelog](https://github.com/dlanileonardo/dfocus/compare/v0.0.1...0.0.2)
 
 **Implemented enhancements:**
 
+- AutoUpdate [\#6](https://github.com/dlanileonardo/dfocus/pull/6) ([dlanileonardo](https://github.com/dlanileonardo))
+- Touch Bar and Close Button [\#5](https://github.com/dlanileonardo/dfocus/pull/5) ([dlanileonardo](https://github.com/dlanileonardo))
 - Adjusts i18n [\#4](https://github.com/dlanileonardo/dfocus/pull/4) ([dlanileonardo](https://github.com/dlanileonardo))
 
 **Merged pull requests:**
 
+- README.md [\#8](https://github.com/dlanileonardo/dfocus/pull/8) ([dlanileonardo](https://github.com/dlanileonardo))
+- Bump Config [\#7](https://github.com/dlanileonardo/dfocus/pull/7) ([dlanileonardo](https://github.com/dlanileonardo))
 - Update issue templates [\#3](https://github.com/dlanileonardo/dfocus/pull/3) ([dlanileonardo](https://github.com/dlanileonardo))
 - Create CODE\_OF\_CONDUCT.md [\#2](https://github.com/dlanileonardo/dfocus/pull/2) ([dlanileonardo](https://github.com/dlanileonardo))
 - Create LICENSE [\#1](https://github.com/dlanileonardo/dfocus/pull/1) ([dlanileonardo](https://github.com/dlanileonardo))
